@@ -293,14 +293,16 @@ d3.csv("assets/data/data.csv", (err, csvData) => {
   // generate tool tip
   var circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
   // var stateLabels = updateToolTip2(chosenXAxis, chosenYAxis, stateLabels);
-
+        
   // x axis labels event listener
   labelsGroup.selectAll("text")
-    .on("click", (i, nodes) => {
-      // get value of selection
-      var value = d3.select(nodes[i]).attr("value");
-      if (value !== chosenXAxis) {
 
+    // use (i, nodes) if running off github
+    // use () if running locally
+    // .on("click", (i, nodes) => {
+    .on("click", function () {
+      var value = d3.select(this).attr("value");
+      if (value !== chosenXAxis) {
         // replaces chosenXAxis with value
         chosenXAxis = value;
 
@@ -357,11 +359,13 @@ d3.csv("assets/data/data.csv", (err, csvData) => {
 
   // y axis labels event listener
   labelsGroupY.selectAll("text")
-    .on("click", (d, i, nodes) => {
-      // get value of selection
-      var value = d3.select(nodes[i]).attr("value");
-      if (value !== chosenYAxis) {
 
+    // use (i, nodes) if running off github
+    // use () if running locally
+    // .on("click", (i, nodes) => {
+    .on("click", function () {
+      var value = d3.select(this).attr("value");
+      if (value !== chosenYAxis) {
         // replaces chosenYAxis with value
         chosenYAxis = value;
 
