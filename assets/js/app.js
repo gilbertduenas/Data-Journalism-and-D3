@@ -13,8 +13,7 @@ var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
 // select the chart div and add an svg
-var svg = d3
-  .select(".chart")
+var svg = d3.select(".chart")
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight);
@@ -297,7 +296,7 @@ d3.csv("assets/data/data.csv", (err, csvData) => {
 
   // x axis labels event listener
   labelsGroup.selectAll("text")
-    .on("click", () => {
+    .on("click", function () {
       // get value of selection
       var value = d3.select(this).attr("value");
       if (value !== chosenXAxis) {
@@ -358,7 +357,7 @@ d3.csv("assets/data/data.csv", (err, csvData) => {
 
   // y axis labels event listener
   labelsGroupY.selectAll("text")
-    .on("click", () => {
+    .on("click", function () {
       // get value of selection
       var value = d3.select(this).attr("value");
       if (value !== chosenYAxis) {
