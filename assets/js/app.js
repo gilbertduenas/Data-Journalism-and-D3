@@ -296,8 +296,10 @@ d3.csv("assets/data/data.csv", (err, csvData) => {
         
   // x axis labels event listener
   labelsGroup.selectAll("text")
-    .on("click", (i, nodes) => {
+      .on("click", function () {
       var value = d3.select(this).attr("value");
+//     .on("click", (i, nodes) => {
+//       var value = d3.select(this).attr("value");
       if (value !== chosenXAxis) {
         // replaces chosenXAxis with value
         chosenXAxis = value;
