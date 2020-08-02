@@ -229,6 +229,8 @@ d3.csv("assets/data/data.csv", (err, csvData) => {
   var stateLabels = chartGroup.append("text")
     .style("text-anchor", "middle")
     .style("font-size", "10px")
+  // remove this line if labels aren't showing
+    .style("z-index", "-1")
     .selectAll("tspan")
     .data(csvData)
     .enter()
